@@ -1,0 +1,66 @@
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-eye:before {
+    content: "\f06e"
+}
+
+.fa-eye-slash:before {
+    content: "\f070"
+}
+
+.invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
+.logincontainer {
+    background-image: url("/assets/images/custom/authrightimg.jfif");
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.passwordinputcontainer {
+    position: relative;
+}
+
+.passwordinput {
+    padding-left: 25px;
+    padding-right: 30px;
+}
+
+.passwordshoweye {
+    border: none;
+    background-color: transparent;
+    color: #1428a0;
+    padding: 9px 13px;
+    position: absolute;
+    top: -2px;
+    right: 0;
+    text-transform: none;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.auth {
+    display: inherit;
+    background-position: center top;
+    background-size: 100% auto;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.auth .card {
+    padding-top: 20px;
+}
