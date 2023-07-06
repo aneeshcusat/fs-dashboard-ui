@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import { NotificationContainer } from 'react-notifications';
 import { connect } from "react-redux";
 import 'react-notifications/lib/notifications.css'
 import routes from "routes.js";
 import PageHeader from "views/common/PageHeader";
-import PageFooter from "views/common/PageFooter";
 import Notification from "views/common/fragments/Notification";
+import PageLeftsideMenu from "views/common/PageLeftsideMenu";
+import PageSidebar from "views/common/PageSidebar";
 
 class MainLayout extends Component {
 	constructor() {
@@ -36,7 +36,8 @@ class MainLayout extends Component {
 	};
 
 	render() {
-		return <div id="main_content">
+
+		return <div id="pcoded" class="pcoded">
 			{this.props.notification.message &&
 				<Notification />
 			}
@@ -46,19 +47,20 @@ class MainLayout extends Component {
 					<strong><i className="fa fa-exclamation-triangle colorred"></i></strong> {this.props.notification.pageMessage}
 				</div>
 			}
-			<div className="page  justify-content-between flex-column d-flex h-100vh">
-				<div className="vleft">
-					<PageHeader pageName={this.state.pageHeader}/>
-					<Switch>
-						{this.getRoutes(routes)}
-						<Redirect from="/main" to={"/dashboard"} />
-					</Switch>
-				</div>
-				<div className="vright">
-					<PageFooter />
+			
+			<div class="pcoded-container navbar-wrapper">
+				<PageHeader pageName={this.state.pageHeader} />
+				<PageSidebar />
+				<PageLeftsideMenu />
+				<div class="pcoded-main-container">
+					<div class="pcoded-wrapper">
+						<Switch>
+							{this.getRoutes(routes)}
+							<Redirect from="/main" to={"/dashboard"} />
+						</Switch>
+					</div>
 				</div>
 			</div>
-			<NotificationContainer />
 		</div>
 	}
 }

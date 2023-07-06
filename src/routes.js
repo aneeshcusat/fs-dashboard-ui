@@ -5,12 +5,21 @@ import ChangePassword from "views/user/ChangePassword";
 import DashboardPage from "views/main/DashboardPage";
 import ForgotPassword from "views/user/ForgotPassword";
 import Error500 from "views/user/Error500";
+import SettingsPage from "views/main/SettingsPage";
 
 const dashboardRoutes = [
   {
     path: "/dashboard",
     name: "Dashboard",
     component: DashboardPage,
+    layoutName: "main",
+    layout: "/main",
+    showInMenu: true
+  },
+  {
+    path: "/settings",
+    name: "Settings",
+    component: SettingsPage,
     layoutName: "main",
     layout: "/main",
     showInMenu: true
