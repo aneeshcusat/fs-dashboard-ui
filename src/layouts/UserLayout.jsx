@@ -27,7 +27,7 @@ class UserLayout extends Component {
 
   render() {
     return (
-      <div className="auth">
+      <div>
         <Switch>{this.getRoutes(routes)}</Switch>
 		  </div>
     );

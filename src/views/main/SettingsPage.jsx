@@ -7,10 +7,14 @@ class SettingsPage extends Component {
 	}
 	render() {
 		return (
-			<div className="pcoded-content">
-
-			Settings page
-		</div>
+			<>
+				{/*<!--app-content open-->*/}
+				< div className="main-content app-content mt-0" >
+					<div className="side-app">
+					</div>
+				</div >
+				{/*<!--app-content end-->*/}
+			</>
 		);
 	}
 }

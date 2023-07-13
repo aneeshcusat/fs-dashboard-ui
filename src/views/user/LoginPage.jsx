@@ -49,71 +49,91 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div className="card">
-        <BrandNameLogo />
-        <form name="form" onSubmit={this.onSubmit}>
-          <div className="card-body">
-            <div className="card-title">Login to your account</div>
-            <div className="invalid-feedback">
-              {this.props.authentication.error &&
-                <span>{this.props.authentication.errorMessage}</span>
-              }
-            </div>
-            <div className="form-group">
-              <label className="form-label">Email</label>
+      <>
+        {/*<!-- BACKGROUND-IMAGE-->*/}
+        <div>
 
-              <div className="input-icon">
-                <span className="input-icon-addon"><i className="fe fe-user"></i></span>
-                <input type="email" className="form-control" id="inputEmail"
-                  placeholder="Email Address"
-                  name="email"
-                  value={this.state.email} onChange={this.onChange}
-                />
+    
+          {/*<!-- PAGE-->*/}
+          <div className="page login-page">
+            <div>
+              {/*<!-- CONTAINER OPEN-->*/}
+              <div className="col col-login mx-auto mt-7">
+                <div className="text-center">
+                  <img src="/assets/images/brand/logo.png" className="header-brand-img" alt="" />
+                </div>
               </div>
-              {this.state.submitted && !this.state.email &&
-                <div className="invalid-feedback">Email is required</div>
-              }
-            </div>
-            <div className="form-group">
-              <label className="form-label">Password
-                <Link to={"/user/forgotpassword"} className="float-right">I forgot password</Link>
-              </label>
-
-              <div className="passwordinputcontainer">
-                <span className="input-icon-addon"><i className="fe fe-lock"></i></span>
-                <input type={this.state.passwordType} className="form-control passwordinput" id="exampleInputPassword1"
-                  placeholder="Password"
-                  name="password"
-                  value={this.state.password} onChange={this.onChange}
-                />
-                <a className="passwordshoweye" onClick={this.togglePasswordType}><i className={`fa ${this.state.passwordType === 'text' ? 'fa-eye-slash' : 'fa-eye'}`}></i></a>
+              <div className="container-login100">
+                <div className="wrap-login100 p-0">
+                  <div className="card-body">
+                    <form className="login100-form validate-form" name="form" onSubmit={this.onSubmit}>
+                      <span className="login100-form-title">
+                        Login
+                      </span>
+                      <div className="invalid-feedback">
+                        {this.props.authentication.error &&
+                          <span>{this.props.authentication.errorMessage}</span>
+                        }
+                      </div>
+                      <div className="wrap-input100 validate-input" data-bs-validate="Valid email is required: ex@abc.xyz">
+                        <input type="email" className="input100" id="inputEmail"
+                          placeholder="Email Address"
+                          name="email"
+                          value={this.state.email} onChange={this.onChange}
+                        />
+                        <span className="focus-input100"></span>
+                        <span className="symbol-input100">
+                          <i className="zmdi zmdi-email" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                      <div className="wrap-input100 validate-input" data-bs-validate="Password is required">
+                        <input type={this.state.passwordType} className="input100 passwordinput" id="exampleInputPassword1"
+                          placeholder="Password"
+                          name="password"
+                          value={this.state.password} onChange={this.onChange}
+                        />
+                        <span className="focus-input100"></span>
+                        <span className="symbol-input100">
+                          <i className="zmdi zmdi-lock" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                      <div className="text-end pt-1">
+                        <p className="mb-0"><a href="forgot-password.html" className="text-primary ms-1">Forgot Password?</a></p>
+                      </div>
+                      <div className="container-login100-form-btn">
+                        <button className="btn btn-primary btn-block">
+                          {this.props.authentication.loggingIn && <span className="spinner-border spinner-border-sm mr-1"></span>}
+                          Sign in
+                        </button>
+                      </div>
+                      <div className="text-center pt-3">
+                        <p className="text-dark mb-0">Not a member?<a href="register.html" className="text-primary ms-1">Create an Account</a></p>
+                      </div>
+                    </form>
+                  </div>
+                  <div className="card-footer">
+                    <div className="d-flex justify-content-center my-3">
+                      <a href="" className="social-login  text-center me-4">
+                        <i className="fa fa-google"></i>
+                      </a>
+                      <a href="" className="social-login  text-center me-4">
+                        <i className="fa fa-facebook"></i>
+                      </a>
+                      <a href="" className="social-login  text-center">
+                        <i className="fa fa-twitter"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-
-              {this.state.submitted && !this.state.password &&
-                <div className="invalid-feedback">Password is required</div>
-              }
-            </div>
-            <div className="form-group">
-              <label className="custom-control custom-checkbox">
-                <input type="checkbox" className="custom-control-input" />
-                <span className="custom-control-label">Remember me</span>
-              </label>
-            </div>
-            <div className="form-footer">
-              <button className="btn btn-primary btn-block">
-                {this.props.authentication.loggingIn && <span className="spinner-border spinner-border-sm mr-1"></span>}
-                Sign in
-              </button>
-             
+              {/*<!-- CONTAINER CLOSED-->*/}
             </div>
           </div>
-        </form>
+          {/*<!-- End PAGE-->*/}
 
-        <div className="text-center text-muted d-none">
-          Don't have account yet? <Link to={"/user/login"}>Sign up</Link>
         </div>
-        <LoginPageFooter />
-      </div>
+        {/*<!-- BACKGROUND-IMAGE CLOSED-->*/}
+      </>
     );
   }
 }

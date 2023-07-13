@@ -1,83 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from colorlib.com/polygon/admindek/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 16:07:52 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<!doctype html>
+<html lang="en" dir="ltr">
 
 <head>
-	<title>Dashboard UI</title>
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="description" content="" />
+	<!-- META DATA -->
+	<meta charset="UTF-8">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Dashboard-UI –  Dashboard">
+	<meta name="author" content="">
 	<meta name="keywords" content="">
-	<meta name="author" content="colorlib" />
 
-	<link rel="icon" href="%PUBLIC_URL%/assets/https://colorlib.com/polygon/admindek/files/assets/images/favicon.ico"
-		type="image/x-icon">
+	<!-- FAVICON -->
+	<link rel="shortcut icon" type="image/x-icon" href="%PUBLIC_URL%/assets/images/brand/favicon.ico" />
 
-	<link href="%PUBLIC_URL%/assets/https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800"
-		rel="stylesheet">
-	<link href="%PUBLIC_URL%/assets/https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
+	<!-- TITLE -->
+	<title>Dashboard-UI – Dashboard </title>
 
-	<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/assets/css/bootstrap.min.css">
+	<!-- BOOTSTRAP CSS -->
+	<link id="style" href="%PUBLIC_URL%/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-	<link rel="stylesheet" href="%PUBLIC_URL%/assets/css/waves.min.css" type="text/css" media="all">
+	<!-- STYLE CSS -->
+	<link href="%PUBLIC_URL%/assets/css/style.css" rel="stylesheet" />
+	<link href="%PUBLIC_URL%/assets/css/plugins.css" rel="stylesheet" />
 
-	<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/assets/css/feather.css">
+	<!--- FONT-ICONS CSS -->
+	<link href="%PUBLIC_URL%/assets/css/icons.css" rel="stylesheet" />
 
-	<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/assets/css/font-awesome-n.min.css">
-
-	<link rel="stylesheet" href="%PUBLIC_URL%/assets/css/chartist.css" type="text/css" media="all">
-
-	<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/assets/css/style.css">
-	<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/assets/css/widget.css">
 </head>
 
-<body>
+<body class="app sidebar-mini ltr light-mode">
 	<noscript>You need to enable JavaScript to run this app.</noscript>
-	
+	<!-- GLOBAL-LOADER -->
+	<div id="global-loader">
+		<img src="%PUBLIC_URL%/assets/images/loader.svg" class="loader-img" alt="Loader">
+	</div>
+	<!-- /GLOBAL-LOADER -->
 
 	<div id="root">
 	</div>
 
-	<script data-cfasync="false" src="%PUBLIC_URL%/assets/js/email-decode.min.js"></script>
-	<script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="%PUBLIC_URL%/assets/js/jquery.min.js"></script>
-	<script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="%PUBLIC_URL%/assets/js/jquery-ui.min.js"></script>
-	<script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="%PUBLIC_URL%/assets/js/popper.min.js"></script>
-	<script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="%PUBLIC_URL%/assets/js/bootstrap.min.js"></script>
 
-	<script src="%PUBLIC_URL%/assets/js/waves.min.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+	<!-- JQUERY JS -->
+	<script src="%PUBLIC_URL%/assets/js/jquery.min.js"></script>
 
-	<script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="%PUBLIC_URL%/assets/js/jquery.slimscroll.js"></script>
+	<!-- BOOTSTRAP JS -->
+	<script src="%PUBLIC_URL%/assets/plugins/bootstrap/js/popper.min.js"></script>
+	<script src="%PUBLIC_URL%/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 
-	<script src="%PUBLIC_URL%/assets/js/jquery.flot.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
-	<script src="%PUBLIC_URL%/assets/js/jquery.flot.categories.js"
-		type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
-	<script src="%PUBLIC_URL%/assets/js/curvedlines.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
-	<script src="%PUBLIC_URL%/assets/js/jquery.flot.tooltip.min.js"
-		type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+	<!-- SPARKLINE JS-->
+	<script src="%PUBLIC_URL%/assets/js/jquery.sparkline.min.js"></script>
 
-	<script src="%PUBLIC_URL%/assets/js/chartist.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+	<!-- CHART-CIRCLE JS-->
+	<script src="%PUBLIC_URL%/assets/js/circle-progress.min.js"></script>
 
-	<script src="%PUBLIC_URL%/assets/js/amcharts.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
-	<script src="%PUBLIC_URL%/assets/js/serial.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
-	<script src="%PUBLIC_URL%/assets/js/light.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+	<!-- CHARTJS CHART JS-->
+	<script src="%PUBLIC_URL%/assets/plugins/chart/Chart.bundle.js"></script>
+	<script src="%PUBLIC_URL%/assets/plugins/chart/utils.js"></script>
 
-	<script src="%PUBLIC_URL%/assets/js/pcoded.min.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
-	<script src="%PUBLIC_URL%/assets/js/vertical-layout.min.js"
-		type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
-	<script type="d2d1d6e2f87cbebdf4013b26-text/javascript"
-		src="%PUBLIC_URL%/assets/js/custom-dashboard.min.js"></script>
-	<script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="%PUBLIC_URL%/assets/js/script.min.js"></script>
+	<!-- PIETY CHART JS-->
+	<script src="%PUBLIC_URL%/assets/plugins/peitychart/jquery.peity.min.js"></script>
+	<script src="%PUBLIC_URL%/assets/plugins/peitychart/peitychart.init.js"></script>
 
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
-		type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+	<!-- INTERNAL SELECT2 JS -->
+	<script src="%PUBLIC_URL%/assets/plugins/select2/select2.full.min.js"></script>
 
-	<script src="%PUBLIC_URL%/assets/js/rocket-loader.min.js" data-cf-settings="d2d1d6e2f87cbebdf4013b26-|49"
-		defer=""></script>
+	<!-- INTERNAL Data tables js-->
+	<script src="%PUBLIC_URL%/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+	<script src="%PUBLIC_URL%/assets/plugins/datatable/js/dataTables.bootstrap5.js"></script>
+	<script src="%PUBLIC_URL%/assets/plugins/datatable/dataTables.responsive.min.js"></script>
+
+	<!-- ECHART JS-->
+	<script src="%PUBLIC_URL%/assets/plugins/echarts/echarts.js"></script>
+
+	<!-- SIDE-MENU JS-->
+	<script src="%PUBLIC_URL%/assets/plugins/sidemenu/sidemenu.js"></script>
+
+	<!-- Sticky js -->
+	<script src="%PUBLIC_URL%/assets/js/sticky.js"></script>
+
+	<!-- SIDEBAR JS -->
+	<script src="%PUBLIC_URL%/assets/plugins/sidebar/sidebar.js"></script>
+
+	<!-- Perfect SCROLLBAR JS-->
+	<script src="%PUBLIC_URL%/assets/plugins/p-scroll/perfect-scrollbar.js"></script>
+	<script src="%PUBLIC_URL%/assets/plugins/p-scroll/pscroll.js"></script>
+	<script src="%PUBLIC_URL%/assets/plugins/p-scroll/pscroll-1.js"></script>
+
+	<!-- APEXCHART JS -->
+	<script src="%PUBLIC_URL%/assets/js/apexcharts.js"></script>
+
+	<!-- INDEX JS -->
+	<script src="%PUBLIC_URL%/assets/js/index1.js"></script>
+
+	<!-- Color Theme js -->
+	<script src="%PUBLIC_URL%/assets/js/themeColors.js"></script>
+
+	<!-- swither styles js -->
+	<script src="%PUBLIC_URL%/assets/js/swither-styles.js"></script>
+
+	<!-- CUSTOM JS -->
+	<script src="%PUBLIC_URL%/assets/js/custom.js"></script>
+
 </body>
 
 </html>

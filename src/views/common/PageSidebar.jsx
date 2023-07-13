@@ -1,90 +1,33 @@
 import React, { Component } from "react";
+import PageLeftsideMenu from "./PageLeftsideMenu";
 
 class PageSidebar extends Component {
     render() {
         return (
-            <div id="sidebar" className="users p-chat-user showChat">
-                <div className="had-container">
-                    <div className="p-fixed users-main">
-                        <div className="user-box">
-                            <div className="chat-search-box">
-                                <a className="back_friendlist">
-                                    <i className="feather icon-x"></i>
-                                </a>
-                                <div className="right-icon-control">
-                                    <div className="input-group input-group-button">
-                                        <input type="text" id="search-friends" name="footer-email" className="form-control"
-                                            placeholder="Search Friend"/>
-                                        <div className="input-group-append">
-                                            <button className="btn btn-primary waves-effect waves-light" type="button"><i
-                                                    className="feather icon-search"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="main-friend-list">
-                                <div className="media userlist-box waves-effect waves-light" data-id="1"
-                                    data-status="online" data-username="Josephin Doe">
-                                    <a className="media-left" href="#!">
-                                        <img className="media-object img-radius img-radius" src="/assets/jpg/avatar-3.jpg"
-                                            alt="Generic placeholder image "/>
-                                        <div className="live-status bg-success"></div>
-                                    </a>
-                                    <div className="media-body">
-                                        <div className="chat-header">Josephin Doe</div>
-                                    </div>
-                                </div>
-                                <div className="media userlist-box waves-effect waves-light" data-id="2"
-                                    data-status="online" data-username="Lary Doe">
-                                    <a className="media-left" href="#!">
-                                        <img className="media-object img-radius" src="/assets/jpg/avatar-2.jpg"
-                                            alt="Generic placeholder image"/>
-                                        <div className="live-status bg-success"></div>
-                                    </a>
-                                    <div className="media-body">
-                                        <div className="f-13 chat-header">Lary Doe</div>
-                                    </div>
-                                </div>
-                                <div className="media userlist-box waves-effect waves-light" data-id="3"
-                                    data-status="online" data-username="Alice">
-                                    <a className="media-left" href="#!">
-                                        <img className="media-object img-radius" src="/assets/jpg/avatar-4.jpg"
-                                            alt="Generic placeholder image"/>
-                                        <div className="live-status bg-success"></div>
-                                    </a>
-                                    <div className="media-body">
-                                        <div className="f-13 chat-header">Alice</div>
-                                    </div>
-                                </div>
-                                <div className="media userlist-box waves-effect waves-light" data-id="4"
-                                    data-status="offline" data-username="Alia">
-                                    <a className="media-left" href="#!">
-                                        <img className="media-object img-radius" src="/assets/jpg/avatar-3.jpg"
-                                            alt="Generic placeholder image"/>
-                                        <div className="live-status bg-default"></div>
-                                    </a>
-                                    <div className="media-body">
-                                        <div className="f-13 chat-header">Alia<small className="d-block text-muted">10 min
-                                                ago</small></div>
-                                    </div>
-                                </div>
-                                <div className="media userlist-box waves-effect waves-light" data-id="5"
-                                    data-status="offline" data-username="Suzen">
-                                    <a className="media-left" href="#!">
-                                        <img className="media-object img-radius" src="/assets/jpg/avatar-2.jpg"
-                                            alt="Generic placeholder image"/>
-                                        <div className="live-status bg-default"></div>
-                                    </a>
-                                    <div className="media-body">
-                                        <div className="f-13 chat-header">Suzen<small className="d-block text-muted">15 min
-                                                ago</small></div>
-                                    </div>
-                                </div>
-                            </div>
+            <> {/*<!--APP-SIDEBAR-->*/}
+                <div className="sticky">
+                    <div className="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+                    <aside className="app-sidebar">
+                        <div className="side-header">
+                            <a className="header-brand1" href="index.html">
+                                <img src="/assets/images/brand/logo.png" className="header-brand-img desktop-logo" alt="logo" />
+                                <img src="/assets/images/brand/logo-1.png" className="header-brand-img toggle-logo" alt="logo" />
+                                <img src="/assets/images/brand/logo-2.png" className="header-brand-img light-logo" alt="logo" />
+                                <img src="/assets/images/brand/logo-3.png" className="header-brand-img light-logo1" alt="logo" />
+                            </a>
+                            {/*<!-- LOGO -->*/}
                         </div>
-                    </div>
+                        <div className="main-sidemenu">
+                            <div className="slide-left disabled" id="slide-left"></div>
+                            <PageLeftsideMenu/>
+                            <div className="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
+                                width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z" />
+                            </svg></div>
+                        </div>
+                    </aside>
                 </div>
-            </div>
+                {/*<!--/APP-SIDEBAR-->*/}</>
         );
     }
 }
