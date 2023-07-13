@@ -1,5 +1,64 @@
-'use strict';$(document).ready(function(){$("#basic-forms").steps({headerTag:"h3",bodyTag:"fieldset",transitionEffect:"slideLeft",autoFocus:true});$("#verticle-wizard").steps({headerTag:"h3",bodyTag:"fieldset",transitionEffect:"slide",stepsOrientation:"vertical",autoFocus:true});$("#design-wizard").steps({headerTag:"h3",bodyTag:"fieldset",transitionEffect:"slideLeft",autoFocus:true});var form=$("#example-advanced-form").show();form.steps({headerTag:"h3",bodyTag:"fieldset",transitionEffect:"slideLeft",onStepChanging:function(event,currentIndex,newIndex){if(currentIndex>newIndex){return true;}
-if(newIndex===3&&Number($("#age-2").val())<18){return false;}
-if(currentIndex<newIndex){form.find(".body:eq("+newIndex+") label.error").remove();form.find(".body:eq("+newIndex+") .error").removeClass("error");}
-form.validate().settings.ignore=":disabled,:hidden";return form.valid();},onStepChanged:function(event,currentIndex,priorIndex){if(currentIndex===2&&Number($("#age-2").val())>=18){form.steps("next");}
-if(currentIndex===2&&priorIndex===3){form.steps("previous");}},onFinishing:function(event,currentIndex){form.validate().settings.ignore=":disabled";return form.valid();},onFinished:function(event,currentIndex){alert("Submitted!");$('.content input[type="text"]').val('');$('.content input[type="email"]').val('');$('.content input[type="password"]').val('');}}).validate({errorPlacement:function errorPlacement(error,element){element.before(error);},rules:{confirm:{equalTo:"#password-2"}}});});
+(function($) {
+	"use strict";
+
+	$('#wizard1').steps({
+		headerTag: 'h3',
+		bodyTag: 'div',
+		autoFocus: true,
+		titleTemplate: '<span class="number">#index#<\/span> <span class="title">#title#<\/span>'
+	});
+	$('#wizard2').steps({
+		headerTag: 'h3',
+		bodyTag: 'div',
+		autoFocus: true,
+		titleTemplate: '<span class="number">#index#<\/span> <span class="title">#title#<\/span>',
+		onStepChanging: function(event, currentIndex, newIndex) {
+			if (currentIndex < newIndex) {
+				// Step 1 form validation
+				if (currentIndex === 0) {
+					var fname = $('#firstname').parsley();
+					var lname = $('#lastname').parsley();
+					if (fname.isValid() && lname.isValid()) {
+						return true;
+					} else {
+						fname.validate();
+						lname.validate();
+					}
+				}
+				// Step 2 form validation
+				if (currentIndex === 1) {
+					var email = $('#email').parsley();
+					if (email.isValid()) {
+						return true;
+					} else {
+						email.validate();
+					}
+				}
+				// Always allow step back to the previous step even if the current step is not valid.
+			} else {
+				return true;
+			}
+		}
+	});
+	$('#wizard3').steps({
+		headerTag: 'h3',
+		bodyTag: 'div',
+		autoFocus: true,
+		titleTemplate: '<span class="number">#index#<\/span> <span class="title">#title#<\/span>',
+		stepsOrientation: 1
+	});
+
+	//_________accordion-wizard
+	var options = {
+		mode: 'wizard',
+		autoButtonsNextClass: 'btn btn-primary float-end',
+		autoButtonsPrevClass: 'btn btn-light',
+		stepNumberClass: 'badge rounded-pill bg-primary me-1',
+		onSubmit: function() {
+		  alert('Form submitted!');
+		  return true;
+		}
+	}
+	$( "#form" ).accWizard(options);
+		
+})(jQuery); 

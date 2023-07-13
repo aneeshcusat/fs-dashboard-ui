@@ -7,6 +7,8 @@ import PageHeader from "views/common/PageHeader";
 import Notification from "views/common/fragments/Notification";
 import PageLeftsideMenu from "views/common/PageLeftsideMenu";
 import PageSidebar from "views/common/PageSidebar";
+import PageSidebarRight from "views/common/PageSidebarRight";
+import PageFooter from "views/common/PageFooter";
 
 class MainLayout extends Component {
 	constructor() {
@@ -37,31 +39,46 @@ class MainLayout extends Component {
 
 	render() {
 
-		return <div id="pcoded" class="pcoded">
-			{this.props.notification.message &&
-				<Notification />
-			}
-			{this.props.notification.pageMessage &&
-				<div className="alert alert-danger alert-dismissible custom-alert-bar">
-					<button type="button" className="close" data-dismiss="alert"></button>
-					<strong><i className="fa fa-exclamation-triangle colorred"></i></strong> {this.props.notification.pageMessage}
-				</div>
-			}
-			
-			<div class="pcoded-container navbar-wrapper">
-				<PageHeader pageName={this.state.pageHeader} />
-				<PageSidebar />
-				<PageLeftsideMenu />
-				<div class="pcoded-main-container">
-					<div class="pcoded-wrapper">
-						<Switch>
-							{this.getRoutes(routes)}
-							<Redirect from="/main" to={"/dashboard"} />
-						</Switch>
+		return (
+			<>
+				{/*<!-- PAGE -->*/}
+				<div className="page">
+					<div className="page-main">
+						{this.props.notification.message &&
+							<Notification />
+						}
+						{this.props.notification.pageMessage &&
+							<div className="alert alert-danger alert-dismissible custom-alert-bar">
+								<button type="button" className="close" data-dismiss="alert"></button>
+								<strong><i className="fa fa-exclamation-triangle colorred"></i></strong> {this.props.notification.pageMessage}
+							</div>
+						}
+						<PageHeader pageName={this.state.pageHeader} />
+						<PageSidebar />
+						{/*<!--app-content open-->*/}
+						<div className="main-content app-content mt-0">
+							<div className="side-app">
+
+								<Switch>
+									{this.getRoutes(routes)}
+									<Redirect from="/main" to={"/dashboard"} />
+								</Switch>
+							</div>
+						</div>
+						{/*<!--app-content end-->*/}
 					</div>
+
+					<PageSidebarRight />
+					<PageFooter />
+
+
 				</div>
-			</div>
-		</div>
+
+				{/*<!-- BACK-TO-TOP -->*/}
+				<a href="#top" id="back-to-top"><i className="fa fa-angle-up"></i></a>
+			</>
+		)
+
 	}
 }
 
