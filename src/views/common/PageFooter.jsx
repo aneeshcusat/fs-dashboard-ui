@@ -8,7 +8,7 @@ class PageFooter extends Component {
                 <div className="container">
                     <div className="row align-items-center flex-row-reverse">
                         <div className="col-md-12 col-sm-12 text-center">
-                            Copyright © <span id="year"></span> <a href="javascript:void(0);">Dashboard-UI</a>. Designed with <span className="fa fa-heart text-danger"></span> by <a href="javascript:void(0);"> Spruko </a> All rights reserved
+                            Copyright © <span id="year"></span> <a href="javascript:void(0);">Dashboard-UI</a>. Designed with <span className="fa fa-heart text-danger"></span> by <a href="javascript:void(0);"> Famstack </a> All rights reserved
                         </div>
                     </div>
                 </div>

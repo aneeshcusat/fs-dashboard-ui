@@ -1,6 +1,13 @@
+import { userActions } from "_actions";
+import { store } from "_helpers";
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class PageSidebarRight extends Component {
+    handleLogout = (e) => {
+        e.preventDefault();
+        store.dispatch(this.props.logout());
+    }
     render() {
         return (
             <>
@@ -67,14 +74,14 @@ class PageSidebarRight extends Component {
                                         </div>
                                     </div>
                                 </a>
-                                <a className="dropdown-item d-flex border-bottom" href="login.html">
+                                <button className="dropdown-item d-flex border-bottom" onClick={this.handleLogout}>
                                     <div className="d-flex"><i className="fe fe-power me-3 tx-20 text-muted"></i>
                                         <div className="pt-1">
                                             <h6 className="mb-0">Sign Out</h6>
                                             <p className="tx-12 mb-0 text-muted">Account Signout</p>
                                         </div>
                                     </div>
-                                </a>
+                                </button>
                             </div>
                             <div className="tab-pane" id="side2">
                                 <div className="list-group list-group-flush ">
@@ -305,4 +312,15 @@ class PageSidebarRight extends Component {
     }
 }
 
-export default PageSidebarRight;
+const mapStateToProps = state => ({
+    authentication: state.authentication
+});
+
+const mapDispatchToProps = dispatch => ({
+    logout: userActions.logout
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(PageSidebarRight);

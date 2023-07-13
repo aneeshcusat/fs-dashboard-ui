@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Columnchart from "views/common/plugins/columnchart";
 
 class DashboardPage extends Component {
 
@@ -130,7 +131,7 @@ class DashboardPage extends Component {
 									<h3 className="card-title">Total Transactions</h3>
 								</div>
 								<div className="card-body pb-0">
-									<div id="chartArea" className="chart-donut"></div>
+									<Columnchart/>
 								</div>
 							</div>
 						</div>
@@ -359,7 +360,7 @@ class DashboardPage extends Component {
 													<td className="text-muted fs-15 fw-semibold text-center">01.</td>
 													<td>
 														<div className="d-flex">
-															<span className="avatar avatar-md brround mt-1" style={{"background-image":"url(/assets/images/users/5.jpg)"}}></span>
+															<span className="avatar avatar-md brround mt-1" style={{ backgroundImage: "url(/assets/images/users/5.jpg)" }}></span>
 															<div className="ms-2 mt-0 mt-sm-2 d-block">
 																<h6 className="mb-0 fs-14 fw-semibold">Jake poole</h6>
 																<span className="fs-12 text-muted">jacke123@gmail.com</span>
@@ -378,7 +379,7 @@ class DashboardPage extends Component {
 													<td className="text-muted fs-15 fw-semibold text-center">02.</td>
 													<td>
 														<div className="d-flex">
-															<span className="avatar avatar-md brround mt-1" style={{"background-image":"url(/assets/images/users/5.jpg)"}}></span>
+															<span className="avatar avatar-md brround mt-1" style={{ backgroundImage: "url(/assets/images/users/5.jpg)" }}></span>
 															<div className="ms-2 mt-0 mt-sm-2 d-block">
 																<h6 className="mb-0 fs-14 fw-semibold">Virginia Gray</h6>
 																<span className="fs-12 text-muted">virginia456@gmail.com</span>
@@ -397,7 +398,7 @@ class DashboardPage extends Component {
 													<td className="text-muted fs-15 fw-semibold text-center">03.</td>
 													<td>
 														<div className="d-flex">
-															<span className="avatar avatar-md brround mt-1" style={{"background-image":"url(/assets/images/users/5.jpg)"}}></span>
+															<span className="avatar avatar-md brround mt-1" style={{ backgroundImage: "url(/assets/images/users/5.jpg)" }}></span>
 															<div className="ms-2 mt-0 mt-sm-2 d-block">
 																<h6 className="mb-0 fs-14 fw-semibold">Jacob Thomson</h6>
 																<span className="fs-12 text-muted">jacobthomson@gmail.com</span>
@@ -416,7 +417,7 @@ class DashboardPage extends Component {
 													<td className="text-muted fs-15 fw-semibold text-center">04.</td>
 													<td>
 														<div className="d-flex">
-															<span className="avatar avatar-md brround mt-1" style={{"background-image":"url(/assets/images/users/5.jpg)"}}></span>
+															<span className="avatar avatar-md brround mt-1" style={{ backgroundImage: "url(/assets/images/users/5.jpg)" }}></span>
 															<div className="ms-2 mt-0 mt-sm-2 d-block">
 																<h6 className="mb-0 fs-14 fw-semibold">Trevor Thomson</h6>
 																<span className="fs-12 text-muted">trevor@gmail.com</span>
@@ -435,7 +436,7 @@ class DashboardPage extends Component {
 													<td className="text-muted fs-15 fw-semibold text-center">05.</td>
 													<td>
 														<div className="d-flex">
-															<span className="avatar avatar-md brround mt-1" style={{"background-image":"url(/assets/images/users/5.jpg)"}}></span>
+															<span className="avatar avatar-md brround mt-1" style={{ backgroundImage: "url(/assets/images/users/5.jpg)" }}></span>
 															<div className="ms-2 mt-0 mt-sm-2 d-block">
 																<h6 className="mb-0 fs-14 fw-semibold">Kylie north</h6>
 																<span className="fs-12 text-muted">kylie@gmail.com</span>
@@ -454,7 +455,7 @@ class DashboardPage extends Component {
 													<td className="text-muted fs-15 fw-semibold text-center">06.</td>
 													<td>
 														<div className="d-flex">
-															<span className="avatar avatar-md brround mt-1" style={{"background-image":"url(/assets/images/users/5.jpg)"}}></span>
+															<span className="avatar avatar-md brround mt-1" style={{ backgroundImage: "url(/assets/images/users/5.jpg)" }}></span>
 															<div className="ms-2 mt-0 mt-sm-2 d-block">
 																<h6 className="mb-0 fs-14 fw-semibold">Jan Hodges</h6>
 																<span className="fs-12 text-muted">jan@gmail.com</span>
@@ -473,7 +474,7 @@ class DashboardPage extends Component {
 													<td className="text-muted fs-15 fw-semibold text-center">07.</td>
 													<td>
 														<div className="d-flex">
-															<span className="avatar avatar-md brround mt-1" style={{"background-image":"url(/assets/images/users/5.jpg)"}}></span>
+															<span className="avatar avatar-md brround mt-1" style={{ backgroundImage: "url(/assets/images/users/5.jpg)" }}></span>
 															<div className="ms-2 mt-0 mt-sm-2 d-block">
 																<h6 className="mb-0 fs-14 fw-semibold">Trevor Thomson</h6>
 																<span className="fs-12 text-muted">trevor@gmail.com</span>
@@ -492,7 +493,7 @@ class DashboardPage extends Component {
 													<td className="text-muted fs-15 fw-semibold text-center">08.</td>
 													<td>
 														<div className="d-flex">
-															<span className="avatar avatar-md brround mt-1" style={{"background-image":"url(/assets/images/users/5.jpg)"}}></span>
+															<span className="avatar avatar-md brround mt-1" style={{ backgroundImage: "url(/assets/images/users/5.jpg)" }}></span>
 															<div className="ms-2 mt-0 mt-sm-2 d-block">
 																<h6 className="mb-0 fs-14 fw-semibold">Emily Lewis</h6>
 																<span className="fs-12 text-muted">emily@gmail.com</span>

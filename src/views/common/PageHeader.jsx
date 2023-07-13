@@ -215,9 +215,9 @@ class PageHeader extends Component {
                                                     <a className="dropdown-item" href="faq.html">
                                                         <i className="dropdown-icon fe fe-alert-triangle"></i> Need help?
                                                     </a>
-                                                    <a className="dropdown-item" href="login.html">
+                                                    <button className="dropdown-item"   onClick={this.handleLogout}>
                                                         <i className="dropdown-icon fe fe-alert-circle"></i> Sign out
-                                                    </a>
+                                                    </button>
                                                 </div>
                                             </div>
                                             <div className="dropdown d-md-flex header-settings">
