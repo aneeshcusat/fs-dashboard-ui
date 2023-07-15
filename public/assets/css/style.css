@@ -17909,7 +17909,8 @@ svg.table-delete {
     }
 
     .app-content .side-app {
-        padding: 0px 15px 0 15px !important;
+        padding: 0px 5px 0 1px !important;
+        margin-top: 75px;
     }
 }
 
@@ -29588,6 +29589,7 @@ body.fixed-header .header {
 
     .app-content .side-app {
         padding-top: 0px !important;
+        margin-top: 75px;;
     }
 }
 
@@ -37596,7 +37598,8 @@ body.rtl {
     }
 
     .rtl .app-content .side-app {
-        padding: 0px 15px 0 15px !important;
+        padding: 0px 5px 0 1px !important;
+        margin-top: 75px;
     }
 }
 
@@ -42564,7 +42567,8 @@ body.rtl {
 }
 
 .app-content .side-app {
-    padding: 0px 30px 0 30px;
+    padding: 0px 5px 0 1px !important;
+    margin-top: 75px;
 }
 
 .footer .container {
