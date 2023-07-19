@@ -9,4 +9,3 @@ async function load(startDate, endDate) {
     const dashboardResponse = await axiosUtils.post(urlConfig.DASHBOARD_PATH, { 'startDate':startDate,'endDate':endDate });
     return dashboardResponse;
 }
-

@@ -27,7 +27,7 @@ function getCurrentUserId() {
 function getCurrentUserName() {
   let currentUser = getCurrentUser()
   if (currentUser) {
-    return currentUser.name;
+    return currentUser.firstName + ' ' + currentUser.lastName ;
   }
 }
 function getCurrentTeamId() {

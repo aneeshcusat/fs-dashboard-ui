@@ -1,4 +1,5 @@
 import { userActions } from "_actions";
+import { userUtils } from "_helpers";
 import { store } from "_helpers";
 import React, { Component } from "react";
 import { connect } from "react-redux";
@@ -37,7 +38,7 @@ class PageSidebarRight extends Component {
                                             <img alt="user-img" className="avatar avatar-xl brround mx-auto text-center" src="/assets/images/faces/6.jpg"/><span className="avatar-status profile-status bg-green"></span>
                                         </div>
                                         <div className="user-info mg-t-20">
-                                            <h6 className="fw-semibold  mt-2 mb-0">Mintrona Pechon</h6>
+                                            <h6 className="fw-semibold  mt-2 mb-0">{userUtils.getCurrentUserName()}</h6>
                                             <span className="mb-0 text-muted fs-12">Premium Member</span>
                                         </div>
                                     </div>

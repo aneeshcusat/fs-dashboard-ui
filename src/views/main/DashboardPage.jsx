@@ -1,15 +1,28 @@
 import React, { Component } from "react";
-import Columnchart from "views/common/plugins/columnchart";
-
+import ColumnChartMin from "views/common/plugins/columnchartmin";
+import PieChart from "views/common/plugins/piechart";
+import { dashboardActions } from '../../_actions';
+import { store } from '_helpers';
+import { connect } from 'react-redux';
+import PropTypes from "prop-types";
 class DashboardPage extends Component {
 
+	constructor(props) {
+		super(props);
+		
+	  }
 	componentDidMount() {
 		this.props.pageHeaderNameChangeHandler(this.props.routeProp.name)
+		store.dispatch(this.props.load('2023-07-01T00:00:00.000+00:00', '2023-07-07T23:44:00.000+00:00'));
 	}
 	render() {
+		if (!this.props.userDashboard) {
+			return null
+		}
+		const effortColumnChartDataObject = userEffortChartData(this.props.userDashboard.effortTrend);
+		const effortPieChartDataObject = userActivityTypeChartData(this.props.userDashboard.taskTypeTrend); 
 		return (
 			<>
-
 				{/*<!-- CONTAINER -->*/}
 				<div className="main-container container-fluid">
 
@@ -36,7 +49,6 @@ class DashboardPage extends Component {
 						</div>
 					</div>
 					{/*<!-- PAGE-HEADER END -->*/}
-
 					{/*<!-- ROW-1 -->*/}
 					<div className="row">
 						<div className="col-lg-12 col-md-12 col-sm-12 col-xl-12">
@@ -46,11 +58,8 @@ class DashboardPage extends Component {
 										<div className="card-body">
 											<div className="row">
 												<div className="col">
-													<h6 className="">Total Sales</h6>
-													<h3 className="mb-2 number-font">34,516</h3>
-													<p className="text-muted mb-0">
-														<span className="text-primary"><i className="fa fa-chevron-circle-up text-primary me-1"></i> 3%</span> last month
-													</p>
+													<h6 className="">My Effort Spent</h6>
+													<h3 className="mb-2 number-font">{this.props.userDashboard.tilesSummaryResponse.myEffortSpent}</h3>
 												</div>
 												<div className="col col-auto">
 													<div className="counter-icon bg-primary-gradient box-shadow-primary brround ms-auto">
@@ -66,15 +75,13 @@ class DashboardPage extends Component {
 										<div className="card-body">
 											<div className="row">
 												<div className="col">
-													<h6 className="">Total Leads</h6>
-													<h3 className="mb-2 number-font">56,992</h3>
-													<p className="text-muted mb-0">
-														<span className="text-secondary"><i className="fa fa-chevron-circle-up text-secondary me-1"></i> 3%</span> last month
-													</p>
+													<h6 className="">Team Efforts Spent</h6>
+													<h3 className="mb-2 number-font">{this.props.userDashboard.tilesSummaryResponse.teamEffortSpent}</h3>
+													
 												</div>
 												<div className="col col-auto">
-													<div className="counter-icon bg-danger-gradient box-shadow-danger brround  ms-auto">
-														<i className="icon icon-rocket text-white mb-5 "></i>
+													<div className="counter-icon bg-secondary-gradient box-shadow-primary brround ms-auto">
+														<i className="fe fe-trending-up text-white mb-5 "></i>
 													</div>
 												</div>
 											</div>
@@ -86,15 +93,12 @@ class DashboardPage extends Component {
 										<div className="card-body">
 											<div className="row">
 												<div className="col">
-													<h6 className="">Total Profit</h6>
-													<h3 className="mb-2 number-font">$42,567</h3>
-													<p className="text-muted mb-0">
-														<span className="text-success"><i className="fa fa-chevron-circle-down text-success me-1"></i> 0.5%</span> last month
-													</p>
+													<h6 className="">My Open Items</h6>
+													<h3 className="mb-2 number-font">{this.props.userDashboard.tilesSummaryResponse.myOpenItemCount}</h3>
 												</div>
 												<div className="col col-auto">
-													<div className="counter-icon bg-secondary-gradient box-shadow-secondary brround ms-auto">
-														<i className="fe fe-dollar-sign text-white mb-5 "></i>
+													<div className="counter-icon bg-primary-gradient box-shadow-primary brround ms-auto">
+														<i className="fe fe-user text-white mb-5 "></i>
 													</div>
 												</div>
 											</div>
@@ -106,15 +110,12 @@ class DashboardPage extends Component {
 										<div className="card-body">
 											<div className="row">
 												<div className="col">
-													<h6 className="">Total Cost</h6>
-													<h3 className="mb-2 number-font">$34,789</h3>
-													<p className="text-muted mb-0">
-														<span className="text-danger"><i className="fa fa-chevron-circle-down text-danger me-1"></i> 0.2%</span> last month
-													</p>
+													<h6 className="">Team Open Items</h6>
+													<h3 className="mb-2 number-font">{this.props.userDashboard.tilesSummaryResponse.teamOpenItemCount}</h3>
 												</div>
 												<div className="col col-auto">
-													<div className="counter-icon bg-success-gradient box-shadow-success brround  ms-auto">
-														<i className="fe fe-briefcase text-white mb-5 "></i>
+													<div className="counter-icon bg-secondary-gradient box-shadow-primary brround ms-auto">
+														<i className="fe fe-users text-white mb-5 "></i>
 													</div>
 												</div>
 											</div>
@@ -125,47 +126,32 @@ class DashboardPage extends Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-sm-12 col-md-12 col-lg-12 col-xl-9">
+						<div className="col-sm-12 col-md-12 col-lg-12 col-xl-8">
 							<div className="card">
 								<div className="card-header">
-									<h3 className="card-title">Total Transactions</h3>
+									<h3 className="card-title">My Effort Trend</h3>
 								</div>
-								<div className="card-body pb-0">
-									<Columnchart/>
+								<div className="card-body pt-0 ps-0 pe-0 pb-0">
+									<ColumnChartMin xAxisData={effortColumnChartDataObject.xAxisDataArray} yAxisData={effortColumnChartDataObject.yAxisDataArray} nameLabel="Effort"/>
 								</div>
 							</div>
 						</div>
 						{/*<!-- COL END -->*/}
-						<div className="col-sm-12 col-md-12 col-lg-12 col-xl-3">
-							<div className="card custom-card ">
+						<div className="col-sm-12 col-md-12 col-lg-12 col-xl-4">
+							<div className="card ">
 								<div className="card-header">
-									<h3 className="card-title">Recent Orders</h3>
+									<h3 className="card-title">Activity Type</h3>
 								</div>
-								<div className="card-body pt-0 ps-0 pe-0">
-									<div id="recentorders" className="apex-charts ht-150"></div>
-									<div className="row sales-product-infomation pb-0 mb-0 mx-auto wd-100p mt-6">
-										<div className="col-md-6 col justify-content-center text-center">
-											<p className="mb-0 d-flex justify-content-center"><span className="legend bg-primary"></span>Delivered</p>
-											<h3 className="mb-1 fw-bold">5238</h3>
-											<div className="d-flex justify-content-center ">
-												<p className="text-muted mb-0">Last 6 months</p>
-											</div>
-										</div>
-										<div className="col-md-6 col text-center float-end">
-											<p className="mb-0 d-flex justify-content-center "><span className="legend bg-background2"></span>Cancelled</p>
-											<h3 className="mb-1 fw-bold">3467</h3>
-											<div className="d-flex justify-content-center ">
-												<p className="text-muted mb-0">Last 6 months</p>
-											</div>
-										</div>
-									</div>
+								<div className="card-body pt-0 ps-0 pe-0 pb-0">
+									<PieChart activityTypeValues={effortPieChartDataObject.series} activityTypeLabels={effortPieChartDataObject.label} />
 								</div>
 							</div>
 						</div>
 						{/*<!-- COL END -->*/}
 					</div>
 					{/*<!-- ROW-1 END -->*/}
-
+	
+	
 					{/*<!-- ROW-3 -->*/}
 					<div className="row">
 						<div className="col-xl-4 col-md-12">
@@ -525,4 +511,46 @@ class DashboardPage extends Component {
 	}
 }
 
-export default DashboardPage;
+DashboardPage.propTypes = {
+	load: PropTypes.func.isRequired,
+	userDashboard: PropTypes.object.isRequired
+  };
+
+const mapStateToProps = state => ({
+	userDashboard: state.dashboard.dashboardData
+  });
+
+const mapDispatchToProps = dispatch => ({
+	load: dashboardActions.load
+  });
+
+export default connect(
+	mapStateToProps,
+  	mapDispatchToProps
+  )(DashboardPage);
+
+  function userEffortChartData(effortTrend) {
+
+	const returnObject = {
+		xAxisDataArray: [],
+		yAxisDataArray: []
+	  }
+	for (const obj of effortTrend) {
+		returnObject.xAxisDataArray.push(obj.date);
+		returnObject.yAxisDataArray.push(obj.effort);
+	  }
+	return returnObject;
+  }
+
+  function userActivityTypeChartData(taskTypeTrend) {
+
+	const returnObject = {
+		label: [],
+		series: []
+	  }
+	for (const obj of taskTypeTrend) {
+		returnObject.label.push(obj.taskType);
+		returnObject.series.push(obj.effort);
+	  }
+	return returnObject;
+  }
