@@ -8,7 +8,7 @@ const PieChart = ({activityTypeValues , activityTypeLabels}) => {
         type: 'pie',
       },
       series: activityTypeValues,
-      labels: activityTypeLabels
+      labels: activityTypeLabels,
     };
     const divStyle = {
       height:'300px'

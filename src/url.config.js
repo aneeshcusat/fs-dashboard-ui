@@ -2,7 +2,7 @@ import config from "config";
 
 let BASE_API_PATH = "/api/v1/";
 let USER_API_PATH = BASE_API_PATH + "user";
-let DASHBOARD_API_PATH = BASE_API_PATH + "main";
+let MAIN_API_PATH = BASE_API_PATH + "main";
 
 const urlConfig = {
     USER_AUTHENTICATE: USER_API_PATH + "/authenticate",
@@ -12,7 +12,8 @@ const urlConfig = {
     CHANGE_PASSWORD: USER_API_PATH + "/change/password",
     UPDATE_PASSWORD: USER_API_PATH + "/update/password",
     USER_AUTH_REFRESH: USER_API_PATH + "/authrefresh",
-    DASHBOARD_PATH: DASHBOARD_API_PATH + "/dashboard"
+    DASHBOARD_PATH: MAIN_API_PATH + "/dashboard",
+    FEED_PATH: MAIN_API_PATH + "/feed"
 }
 
 export default urlConfig

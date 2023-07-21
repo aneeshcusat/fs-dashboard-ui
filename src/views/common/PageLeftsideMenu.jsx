@@ -23,7 +23,7 @@ class PageLeftsideMenu extends Component {
                         to={"/main/dashboard"}
                         className="side-menu__item"
                         activeClassName="active">
-                        <i className="side-menu__icon fe fe-home"></i><span className="side-menu__label">Dashboard</span>
+                        <i className="side-menu__icon fe fe-home"></i><span className="side-menu__label">Home</span>
                     </NavLink>
                 </li>
                 <li className="sub-category">
