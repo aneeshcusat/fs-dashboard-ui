@@ -9,32 +9,24 @@ class Columnchart extends Component {
             data: {
                 series: [{
                     name: "Total Orders",
-                    type: 'line',
+                    type: 'bar',
                     data: [0, 45, 30, 75, 15, 94, 40, 115, 30, 105, 65, 110]
 
-                }, {
-                    name: "Total Sales",
-                    type: 'line',
-                    data: [0, 60, 20, 130, 75, 130, 75, 140, 64, 130, 85, 120]
-                }, {
-                    name: "",
-                    type: 'area',
-                    data: [0, 105, 70, 175, 85, 154, 90, 185, 120, 145, 185, 130]
                 }],
                 options: {
                     chart: {
                         height: 320,
-                        type: "line",
+                        type: "bar",
                         stacked: false,
                         toolbar: {
                             show: true,
                             tools: {
                                 download: true,
-                                selection: false,
+                                selection: true,
                                 zoom: false,
                                 zoomin: true,
                                 zoomout: true,
-                                pan: false,
+                                pan: true,
                                 reset: true | '<img src="/static/icons/reset.png" width="20">'
                             },
                         },
@@ -68,7 +60,7 @@ class Columnchart extends Component {
                     },
 
                     xaxis: {
-                        type: "month",
+                        type: "day",
                         categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                         axisBorder: {
                             show: false,

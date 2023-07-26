@@ -1,6 +1,6 @@
 
 const dev={
-    BACK_END_API_ENDPOINT : "http://localhost:8080",
+    BACK_END_API_ENDPOINT : "http://6v8zj.wiremockapi.cloud",
     API_KEY : "sldjfldsjfo08324lkjsdf124lkj23425264ljsdfklsjfl972394374_dev"
 }
 
@@ -14,4 +14,4 @@ if (process.env.NODE_ENV === 'production') {
     console.log = function () {};
 }
 
-export default  config
+export default config

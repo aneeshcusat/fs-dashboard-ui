@@ -2,13 +2,15 @@ import { combineReducers } from 'redux';
 
 import { authentication } from './authentication.reducer';
 import { notification } from './notification.reducer';
+import { dashboard } from './dashboard.reducer';
 import { userConstants } from '_constants';
 
 
 
 const appReducer = combineReducers({
   authentication,
-  notification
+  notification,
+  dashboard
 })
 
 const rootReducer = (state, action) => {

@@ -14,7 +14,7 @@ export function authentication(state = {}, action) {
     case userConstants.LOGIN_SUCCESS:
       return {
         loggedIn: true,
-        user: action.userResponse.employee,
+        user: action.userResponse.userDetails,
         authToken: action.userResponse.authToken,
         authRefreshToken: action.userResponse.authRefreshToken
       };

@@ -58443,5 +58443,54 @@ html [type=button],
 .w-lg {
     min-width: 150px;
 }
-
+/*This has to be moved to a different file - start*/
+.container {
+    flex-wrap: wrap;
+  }
+  
+  .item {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 12px;
+    margin: 8px;
+    min-width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .item-name {
+    font-size: 18px;
+    font-weight: bold;
+    float: left;
+  }
+  
+  .item-status {
+    margin-top: 8px;
+  }
+  
+  .item-priority {
+    margin-top: 8px;
+  }
+  
+  .item-actions {
+    margin-top: 16px;
+    text-align: end;
+  }
+  
+  .action-button {
+    margin-right: 8px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .action-button.complete {
+    background-color: var(--primary-bg-color) !important;
+  }
+  
+  .action-button.edit {
+    background-color: #ffc107;
+  }
+  /*This has to be moved to a different file - end*/
 /*# sourceMappingURL=style.css.map */

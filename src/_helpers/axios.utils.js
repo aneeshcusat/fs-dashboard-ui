@@ -131,7 +131,6 @@ createAxiosResponseInterceptor();
 
 function insertBasicInfoToBody(requestBody) {
     let currentUser = commonUtils.getCurrentUser();
-
     if (currentUser != null) {
         return {
             "createdBy": currentUser.id,
@@ -140,6 +139,7 @@ function insertBasicInfoToBody(requestBody) {
             ...requestBody
         }
     }
+    
     return requestBody;
 }
 
