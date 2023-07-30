@@ -58492,5 +58492,10 @@ html [type=button],
   .action-button.edit {
     background-color: #ffc107;
   }
+
+  .card_header_margin {
+    margin-bottom: 5px !important;
+  }
+
   /*This has to be moved to a different file - end*/
 /*# sourceMappingURL=style.css.map */
