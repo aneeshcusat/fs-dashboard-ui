@@ -46,18 +46,18 @@ const LeadDashboard = ({ data }) => {
 			</div>
 			{teamDetails.map((item, index) => (
 				
-			<div className="main-container container-fluid">
+		<div className="main-container container-fluid">
 			<div className="row">
-				<div className="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-					<div className="card card_header_margin">
-						<div className="card-header">
-							<h3 className="card-title">{item.teamName}</h3>
+				<div className="col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+					<div className="card team_header">
+						<div className="card-header align-self-center">
+							<span className="card-title">{item.teamName}</span>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div className="row">
-				<div className="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+				<div className="col-sm-8 col-md-8 col-lg-8 col-xl-8 no_padding">
 					<div className="card">
 						<div className="card-header">
 							<h3 className="card-title">Effort Trend</h3>
@@ -70,7 +70,7 @@ const LeadDashboard = ({ data }) => {
 					</div>
 				</div>
 				
-				<div className="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+				<div className="col-sm-4 col-md-4 col-lg-4 col-xl-4 no_padding">
 					<div className="card ">
 						<div className="card-header">
 							<h3 className="card-title">Activity Type</h3>
@@ -82,7 +82,7 @@ const LeadDashboard = ({ data }) => {
 				</div>
 				
 			</div>
-			</div>
+		</div>
 			))}		
 				
 
